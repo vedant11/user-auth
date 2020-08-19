@@ -77,7 +77,7 @@ _______
 
  _______
 
-#### Not yet functioning
+Only registration form works
 
  <ins>For React app:</ins>
 

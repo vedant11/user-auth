@@ -15,7 +15,17 @@ function App() {
     fetch('http://127.0.0.1:8000/api/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 'email': inputValues.form_email, 'password': inputValues.form_pass }),
+      body: JSON.stringify({
+        'profile': {
+          'first_name': inputValues.form_first_name,
+          'last_name': inputValues.form_last_name,
+          'phone_number': inputValues.form_phone_number,
+          'age': inputValues.form_age,
+          'gender': inputValues.form_gender,
+        },
+        'email': inputValues.form_email,
+        'password': inputValues.form_pass
+      }),
     })
       .then(res => res.json())
       .then(data => console.log(data))
