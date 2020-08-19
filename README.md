@@ -1,5 +1,7 @@
 # django-restAPI
 
+<i>Bootrstrapped from [project](https://github.com/SambhavChoradia/django-rest-app)</i>
+
 <ins>Tech stack</ins>
 
 django
