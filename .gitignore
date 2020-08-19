@@ -2,3 +2,4 @@ Lib/
 Scripts/
 .vscode/
 pyvenv.cfg
+rest/app/user/__pycache__
