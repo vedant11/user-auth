@@ -9,6 +9,7 @@ sqlite3
 react - incomplete
 
 _____
+<ins>For django:</ins>
 
 Go to root dir of the repo and:
 
@@ -17,3 +18,11 @@ Go to root dir of the repo and:
 > py manage.py runserver
 
  Backend app will be running
+
+ _______
+
+ <ins>For React app:</ins>
+
+ > npm install
+
+ > npm start
