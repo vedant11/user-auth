@@ -17,6 +17,10 @@ Go to root dir of the repo and:
 
 > pip install -r requirements.txt
 
+> py manage.py makemigrations
+
+> py manage.py migrate 
+
 > py manage.py runserver
 
  Backend app will be running

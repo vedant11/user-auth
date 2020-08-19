@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # django rest framework
     'rest_framework',
-
+    # Added two apps    
     'rest.app.user',
     'rest.app.profile',
 ]
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'rest.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+# default sqlite3 in use
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

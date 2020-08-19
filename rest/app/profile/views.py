@@ -17,11 +17,12 @@ import json
 
 
 class UserProfileView(RetrieveAPIView):
-
+    # For the users that have a token:
     permission_classes = (IsAuthenticated,)
     authentication_class = JSONWebTokenAuthentication
 
     def get(self, request):
+        # Checking if the requested dataset exists
         try:
             user_profile = UserProfile.objects.get(user=request.user)
             status_code = status.HTTP_200_OK
@@ -39,7 +40,7 @@ class UserProfileView(RetrieveAPIView):
                     }
                 ],
             }
-
+            # To get the user's IP address from the incoming request headers
             def get_client_ip(request):
                 x_forwarded_for = request.META.get("HTTP_X_FORWARDED_FOR")
                 if x_forwarded_for:
@@ -48,11 +49,14 @@ class UserProfileView(RetrieveAPIView):
                     ip = request.META.get("REMOTE_ADDR")
                 return ip
 
+            # Performing a simple python post request to let the API know someone has authenticated
+            # and is served the response successfully
             payload = {"user": user_profile.id, "ip": get_client_ip(request)}
             r = request.post(
                 "https://encrusxqoan0b.x.pipedream.net/", data=json.dumps(payload)
             )
-            print(r.text)
+            # Console logging for debugging:
+            # print(r.text)
         except Exception as e:
             status_code = status.HTTP_400_BAD_REQUEST
             response = {

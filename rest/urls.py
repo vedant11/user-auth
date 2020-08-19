@@ -16,6 +16,8 @@ Including another URLconf
 from django.urls import path, include
 
 urlpatterns = [
-    path('api/', include('rest.app.user.urls')),
-    path('api/', include('rest.app.profile.urls')),
+    # incoming url ending with api/<something> gets catched by these urls one by one
+    #  if the url doesnt match the rest.app.user.urls' url, it tries for the second app: profile
+    path("api/", include("rest.app.user.urls")),
+    path("api/", include("rest.app.profile.urls")),
 ]
