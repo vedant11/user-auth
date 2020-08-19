@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # Added two apps
     "rest.app.user",
     "rest.app.profile",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
+CORS_ORIGIN_ALLOW_ALL = True
+
+ALLOWED_HOSTS = ["*"]
 
 ROOT_URLCONF = "rest.urls"
 
