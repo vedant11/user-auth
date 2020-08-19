@@ -17,6 +17,8 @@ class UserRegistrationView(CreateAPIView):
     # serializer helps to retrieve data and parse it into json and vice versa
     # It also checks for exceptions: Validates whether data from POST request can be injected into the DB
     # It checks which fields are required in the models.py and sends an exception message accordingly
+
+    # Telling which serializer to use:
     serializer_class = UserRegistrationSerializer
     permission_classes = (AllowAny,)
     # Function for incoming POST requests: To inject the new user data into our DB

@@ -34,10 +34,12 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         fields = ("email", "password", "profile")
         # keyword arguements to make them editable:
         extra_kwargs = {"password": {"write_only": True}}
-
+    # Std function that is called after serializer validates the req
+    # Adds a new object in the DB   
     def create(self, validated_data):
         profile_data = validated_data.pop("profile")
         user = User.objects.create_user(**validated_data)
+        # Calls the model constructor
         UserProfile.objects.create(
             user=user,
             first_name=profile_data["first_name"],
